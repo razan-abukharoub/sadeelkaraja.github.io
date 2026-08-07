@@ -3,66 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sadeel Abdallah | Software Engineer</title>
-    <!-- Icons & Fonts -->
+    <title>Sadeel Abdallah | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg: #030712;
-            --card-bg: rgba(17, 24, 39, 0.7);
-            --accent: #38bdf8;
-            --accent-glow: rgba(56, 189, 248, 0.25);
-            --purple-glow: rgba(168, 85, 247, 0.25);
-            --text-main: #f9fafb;
-            --text-muted: #9ca3af;
-            --border: rgba(255, 255, 255, 0.08);
+            --bg: #0d0a07;
+            --card-bg: rgba(22, 17, 12, 0.85);
+            --accent: #f97316;
+            --accent-glow: rgba(249, 115, 22, 0.25);
+            --text-main: #fff7ed;
+            --text-muted: #a8a29e;
+            --border: rgba(249, 115, 22, 0.15);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg);
             color: var(--text-main);
-            overflow-x: hidden;
             line-height: 1.6;
-        }
-
-        /* Glow Background Effects */
-        .glow-1 {
-            position: absolute;
-            top: 10%;
-            left: 20%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-            z-index: -1;
-            filter: blur(80px);
-            animation: pulse 8s infinite alternate;
-        }
-
-        .glow-2 {
-            position: absolute;
-            top: 40%;
-            right: 15%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, var(--purple-glow) 0%, transparent 70%);
-            z-index: -1;
-            filter: blur(100px);
-            animation: pulse 10s infinite alternate-reverse;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.5; }
-            100% { transform: scale(1.2); opacity: 0.8; }
+            background-image: 
+                radial-gradient(circle at 80% 20%, rgba(249, 115, 22, 0.12) 0%, transparent 40%),
+                linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
         }
 
         /* Navbar */
@@ -70,36 +37,30 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(3, 7, 18, 0.8);
-            backdrop-filter: blur(16px);
+            background: rgba(13, 10, 7, 0.85);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
             z-index: 1000;
-            padding: 1.2rem 3rem;
+            padding: 1.2rem 4rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            font-family: 'Fira Code', monospace;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--accent);
+        .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--text-main); }
+        .logo span { color: var(--accent); }
+
+        .nav-capsule {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            padding: 6px 16px;
+            border-radius: 30px;
+            display: flex;
+            gap: 1.5rem;
         }
 
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 2rem;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
-            text-shadow: 0 0 10px var(--accent-glow);
-        }
+        .nav-capsule a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
+        .nav-capsule a:hover, .nav-capsule a.active { color: var(--accent); }
 
         /* Hero Section */
         .hero {
@@ -109,58 +70,25 @@
             justify-content: space-between;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
-            gap: 2rem;
+            padding: 100px 2rem 0;
+            gap: 3rem;
         }
 
-        .hero-text {
-            flex: 1;
-        }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 14px;
-            background: rgba(56, 189, 248, 0.1);
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            border-radius: 20px;
-            color: var(--accent);
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-
-        .badge-dot {
-            width: 8px;
-            height: 8px;
-            background: #22c55e;
-            border-radius: 50%;
-            box-shadow: 0 0 8px #22c55e;
-        }
-
-        .hero h1 {
+        .hero-text h1 {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 3.8rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1.2rem;
-            background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #ffffff, #fdba74);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            max-width: 540px;
-        }
+        .hero-text h1 span { color: var(--accent); -webkit-text-fill-color: var(--accent); }
+        .subtitle { font-size: 1.2rem; font-weight: 600; color: #d6d3d1; margin-bottom: 1.5rem; }
+        .hero-text p { color: var(--text-muted); font-size: 1.05rem; max-width: 520px; margin-bottom: 2rem; }
 
-        .btn-group {
-            display: flex;
-            gap: 1rem;
-        }
-
+        .btn-group { display: flex; gap: 1rem; }
         .btn {
             padding: 0.85rem 1.8rem;
             border-radius: 10px;
@@ -173,344 +101,150 @@
             gap: 8px;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
-            color: #030712;
-            box-shadow: 0 0 20px var(--accent-glow);
+        .btn-orange { background: var(--accent); color: #000; box-shadow: 0 0 20px var(--accent-glow); }
+        .btn-orange:hover { transform: translateY(-3px); box-shadow: 0 0 30px rgba(249, 115, 22, 0.4); }
+
+        .btn-outline { background: rgba(255, 255, 255, 0.03); color: var(--text-main); border: 1px solid var(--border); }
+        .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+        /* Card Frame for Visuals */
+        .portrait-frame {
+            position: relative;
+            background: var(--card-bg);
+            border: 1px solid var(--accent);
+            border-radius: 16px;
+            padding: 12px;
+            box-shadow: 0 0 30px var(--accent-glow);
+            max-width: 380px;
+            width: 100%;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 30px rgba(56, 189, 248, 0.5);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-main);
-            border: 1px solid var(--border);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--accent);
+        .frame-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 8px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+            font-family: monospace;
+            font-size: 0.8rem;
             color: var(--accent);
         }
 
-        /* Terminal Window */
-        .terminal {
-            flex: 0.9;
-            background: #0d1117;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-            overflow: hidden;
-            font-family: 'Fira Code', monospace;
-        }
-
-        .terminal-header {
-            background: #161b22;
-            padding: 10px 15px;
+        .portrait-placeholder {
+            width: 100%;
+            height: 420px;
+            background: linear-gradient(180deg, rgba(249, 115, 22, 0.1) 0%, rgba(0,0,0,0.8) 100%);
+            border-radius: 8px;
             display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            gap: 8px;
-            border-bottom: 1px solid var(--border);
+            color: var(--text-muted);
+            border: 1px dashed var(--border);
         }
 
-        .dot { width: 12px; height: 12px; border-radius: 50%; }
-        .red { background: #ff5f56; }
-        .yellow { background: #ffbd2e; }
-        .green { background: #27c93f; }
-
-        .terminal-body {
-            padding: 20px;
-            color: #e6edf3;
-            font-size: 0.9rem;
-        }
-
-        .keyword { color: #ff7b72; }
-        .string { color: #a5d6ff; }
-        .variable { color: #79c0ff; }
-        .comment { color: #8b949e; }
+        .portrait-placeholder i { font-size: 3.5rem; color: var(--accent); margin-bottom: 1rem; }
 
         /* Sections */
-        section {
-            padding: 6rem 2rem;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
+        section { padding: 6rem 2rem; max-width: 1100px; margin: 0 auto; }
+        .section-title { font-family: 'Space Grotesk', sans-serif; font-size: 2.2rem; margin-bottom: 2.5rem; color: var(--text-main); }
+        .section-title span { color: var(--accent); }
 
-        .section-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .section-title::before {
-            content: '// ';
-            color: var(--accent);
-            font-family: 'Fira Code', monospace;
-        }
-
-        /* Cards Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 2rem;
-        }
-
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
         .card {
             background: var(--card-bg);
-            backdrop-filter: blur(12px);
             border: 1px solid var(--border);
-            border-radius: 16px;
+            border-radius: 14px;
             padding: 2rem;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-            transform: translateX(-100%);
-            transition: 0.5s;
-        }
-
-        .card:hover::before {
-            transform: translateX(100%);
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(56, 189, 248, 0.4);
-            box-shadow: 0 10px 30px var(--accent-glow);
-        }
-
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .tag {
-            background: rgba(56, 189, 248, 0.08);
-            border: 1px solid rgba(56, 189, 248, 0.2);
-            color: var(--accent);
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-family: 'Fira Code', monospace;
-        }
-
-        .card-link {
-            color: var(--text-main);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
             transition: 0.3s;
         }
 
-        .card-link:hover {
-            color: var(--accent);
-            gap: 10px;
-        }
+        .card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 10px 25px var(--accent-glow); }
+        .card h3 { font-size: 1.4rem; margin-bottom: 0.8rem; color: var(--text-main); }
+        .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
 
-        /* Skills Badges */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1.2rem;
-        }
+        .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .tag { background: rgba(249, 115, 22, 0.1); color: var(--accent); padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; }
+        .card-link { color: var(--text-main); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        .card-link:hover { color: var(--accent); }
 
-        .skill-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            padding: 1.2rem;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            transition: 0.3s;
-        }
-
-        .skill-card:hover {
-            border-color: var(--accent);
-            background: rgba(56, 189, 248, 0.05);
-        }
-
-        .skill-card i {
-            font-size: 1.8rem;
-            color: var(--accent);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 3rem 1rem;
-            border-top: 1px solid var(--border);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .socials {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .socials a {
-            color: var(--text-muted);
-            font-size: 1.5rem;
-            transition: 0.3s;
-        }
-
-        .socials a:hover {
-            color: var(--accent);
-            transform: scale(1.2);
-        }
+        footer { text-align: center; padding: 3rem 1rem; border-top: 1px solid var(--border); color: var(--text-muted); }
 
         @media (max-width: 968px) {
-            .hero { flex-direction: column; text-align: center; padding-top: 100px; }
-            .hero p { margin: 0 auto 2rem; }
+            .hero { flex-direction: column; text-align: center; }
+            .hero-text p { margin: 0 auto 2rem; }
             .btn-group { justify-content: center; }
-            .terminal { width: 100%; }
+            .nav-capsule { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <div class="glow-1"></div>
-    <div class="glow-2"></div>
-
-    <!-- Nav -->
     <nav>
-        <div class="logo">&lt;Sadeel.Dev /&gt;</div>
-        <div class="nav-links">
+        <div class="logo">SADEEL<span>.</span></div>
+        <div class="nav-capsule">
+            <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
-            <a href="#skills">Tech Stack</a>
+            <a href="#skills">Skills</a>
         </div>
+        <a href="mailto:sadeelkaraja45@gmail.com" class="btn btn-orange" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Let's talk <i class="fas fa-arrow-up-right-from-square"></i></a>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
+    <header class="hero" id="home">
         <div class="hero-text">
-            <div class="badge">
-                <span class="badge-dot"></span> Available for Software Engineering Roles
-            </div>
-            <h1>Sadeel Abdallah</h1>
-            <p>Full-Stack & Mobile Developer crafting high-performance cross-platform apps and robust backend solutions.</p>
+            <h1>Sadeel Abdallah<span>|</span></h1>
+            <div class="subtitle">FullStack · Flutter Developer · Computer Science Graduate</div>
+            <p>Crafting high-performance mobile apps & scalable backend solutions with a strong passion for clean architecture and AI integration.</p>
             <div class="btn-group">
-                <a href="https://github.com/sadeelkaraja" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> GitHub Profile</a>
-                <a href="https://linkedin.com/in/sadeel-karaja-7a5aa6308" target="_blank" class="btn btn-secondary"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="mailto:sadeelkaraja45@gmail.com" class="btn btn-orange"><i class="fas fa-envelope"></i> Contact Me</a>
+                <a href="https://github.com/sadeelkaraja" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub Profile</a>
             </div>
         </div>
 
-        <!-- Terminal Window -->
-        <div class="terminal">
-            <div class="terminal-header">
-                <div class="dot red"></div>
-                <div class="dot yellow"></div>
-                <div class="dot green"></div>
-                <span style="color: var(--text-muted); font-size: 0.75rem; margin-left: auto;">sadeel.config.js</span>
+        <div class="portrait-frame">
+            <div class="frame-header">
+                <span>>_ profile_view.sh</span>
+                <span>● LIVE</span>
             </div>
-            <div class="terminal-body">
-                <p><span class="comment">// Developer Profile Overview</span></p>
-                <p><span class="keyword">const</span> <span class="variable">developer</span> = {</p>
-                <p>&nbsp;&nbsp;name: <span class="string">'Sadeel Abdallah'</span>,</p>
-                <p>&nbsp;&nbsp;degree: <span class="string">'B.Sc. Computer Science'</span>,</p>
-                <p>&nbsp;&nbsp;coreFocus: [<span class="string">'Flutter'</span>, <span class="string">'ASP.NET Core'</span>, <span class="string">'FastAPI'</span>],</p>
-                <p>&nbsp;&nbsp;database: [<span class="string">'SQL Server'</span>, <span class="string">'SQLite'</span>],</p>
-                <p>&nbsp;&nbsp;status: <span class="string">'Building scalable apps'</span></p>
-                <p>};</p>
+            <div class="portrait-placeholder">
+                <i class="fas fa-user-ninja"></i>
+                <p style="font-size: 0.9rem;">[ Your Photo Here ]</p>
             </div>
         </div>
     </header>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 800px; line-height: 1.8;">
-            Computer Science student at Al-Zaytoonah University of Jordan. Specialized in engineering cross-platform mobile experiences with <strong>Flutter & Dart</strong>, and architecting scalable backend APIs using <strong>ASP.NET Core</strong> and <strong>Python (FastAPI)</strong>. Focused on clean code, database optimization, and performance.
-        </p>
-    </section>
-
-    <!-- Projects Section -->
     <section id="projects">
-        <h2 class="section-title">Featured Projects</h2>
+        <h2 class="section-title">Featured <span>Projects</span></h2>
         <div class="grid">
-            
-            <!-- Project 1 -->
             <div class="card">
                 <h3>Travora AI</h3>
-                <p>AI-driven tourism recommendation system delivering personalized itineraries using machine learning integration and API workflows.</p>
+                <p>AI-driven tourism recommendation system built using ASP.NET and FastAPI backend APIs.</p>
                 <div class="tags">
-                    <span class="tag">ASP.NET Core</span>
+                    <span class="tag">ASP.NET</span>
                     <span class="tag">FastAPI</span>
                     <span class="tag">Python</span>
                     <span class="tag">SQLite</span>
                 </div>
-                <a href="https://github.com/sadeelkaraja" target="_blank" class="card-link">View Source Code <i class="fas fa-arrow-right"></i></a>
+                <a href="https://github.com/sadeelkaraja" target="_blank" class="card-link">View Code →</a>
             </div>
 
-            <!-- Project 2 -->
             <div class="card">
                 <h3>Inventory Management App</h3>
-                <p>Cross-platform mobile app enabling real-time product tracking, offline database operations, and full CRUD management.</p>
+                <p>Cross-platform mobile application providing real-time stock tracking and offline SQLite integration.</p>
                 <div class="tags">
                     <span class="tag">Flutter</span>
                     <span class="tag">Dart</span>
                     <span class="tag">SQL / SQLite</span>
-                    <span class="tag">State Management</span>
                 </div>
-                <a href="https://github.com/sadeelkaraja" target="_blank" class="card-link">View Source Code <i class="fas fa-arrow-right"></i></a>
+                <a href="https://github.com/sadeelkaraja" target="_blank" class="card-link">View Code →</a>
             </div>
-
         </div>
     </section>
 
-    <!-- Tech Stack Section -->
-    <section id="skills">
-        <h2 class="section-title">Tech Stack</h2>
-        <div class="skills-grid">
-            <div class="skill-card"><i class="fab fa-flutter"></i> <span>Flutter & Dart</span></div>
-            <div class="skill-card"><i class="fas fa-code"></i> <span>ASP.NET Core</span></div>
-            <div class="skill-card"><i class="fab fa-python"></i> <span>Python & FastAPI</span></div>
-            <div class="skill-card"><i class="fab fa-java"></i> <span>Java</span></div>
-            <div class="skill-card"><i class="fas fa-database"></i> <span>SQL Server / SQLite</span></div>
-            <div class="skill-card"><i class="fab fa-git-alt"></i> <span>Git & GitHub</span></div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
-        <div class="socials">
-            <a href="https://github.com/sadeelkaraja" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/sadeel-karaja-7a5aa6308" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:sadeelkaraja45@gmail.com"><i class="fas fa-envelope"></i></a>
-        </div>
-        <p>© 2026 Sadeel Abdallah • Designed with Modern Dark Theme</p>
+        <p>© 2026 Sadeel Abdallah • Built with Warm Dark UI Theme</p>
     </footer>
 
 </body>
